@@ -59,3 +59,9 @@ configurationFile:
 # the lndcli unlock password.
 autoUnlock: false
 autoUnlockPassword:
+
+loop:
+  enable: true
+  image:
+    repository: thesisrobot/loop
+    tag: 9df227d9d0127b94728448ce2b52ae2d08192994
