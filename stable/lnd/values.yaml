@@ -4,7 +4,7 @@
 
 image:
   repository: thesisrobot/lnd
-  tag: v0.6.1-beta
+  tag: v0.7.0-beta
   pullPolicy: IfNotPresent
 
 # Ports that are exposed to other pods in your cluster
@@ -59,3 +59,9 @@ configurationFile:
 # the lndcli unlock password.
 autoUnlock: false
 autoUnlockPassword:
+
+loop:
+  enable: true
+  image:
+    repository: thesisrobot/loop
+    tag: 9df227d9d0127b94728448ce2b52ae2d08192994

@@ -77,6 +77,17 @@ spec:
             requests:
               cpu: "10m"
         {{- end }}
+        {{- if .Values.loop.enable }}
+        - name: loop
+          image: {{ .Values.loop.image.repository }}:{{ .Values.loop.image.tag }}
+          command: ["/bin/sh", "-c", "sleep 5 && loopd --network={{ .Values.network }}"]
+          volumeMounts:
+            - name: data
+              mountPath: /root/
+          resources:
+            requests:
+              cpu: "10m"
+        {{- end }}
       volumes:
         {{- if .Values.autoUnlock }}
         - name: secrets
